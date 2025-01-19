@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoinSwitch
+
+CoinSwitch is a decentralized token swapping application built on the Solana blockchain. It allows users to seamlessly exchange tokens, view balances, and manage slippage settings—all within an intuitive and user-friendly interface.
+
+## Features
+
+- **Token Swapping**: Swap tokens on the Solana network using the Jupiter Aggregator API.
+- **Wallet Integration**: Connect your wallet via Solana Wallet Adapter for secure transactions.
+- **Token Balances**: View real-time token balances.
+- **Slippage Settings**: Configure slippage tolerance to prevent unexpected outcomes during swaps.
+- **Live Exchange Rates**: See the real-time exchange rate for your selected tokens.
+- **Responsive Design**: Fully responsive and optimized for mobile and desktop users.
+
+## Technology Stack
+
+- **Frontend**: React.js, Next.js
+- **Blockchain**: Solana
+- **Libraries**:
+  - `@solana/web3.js`: Interact with the Solana blockchain.
+  - `@solana/wallet-adapter-react`: Wallet integration for Solana.
+  - `axios`: Fetch data from APIs.
+  - `react-toastify`: Toast notifications for user feedback.
+  - `lucide-react`: Icons for a modern UI.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js and npm installed.
+- A wallet that supports Solana, e.g., Phantom.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the Repository**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/Ayush272002/CoinSwitch.git
+   cd CoinSwitch
+   ```
 
-## Learn More
+2. **Install Dependencies**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the Development Server**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. **Access the App**
+   Open your browser and navigate to `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Update the Solana cluster endpoint in the `Connection` object (`https://api.devnet.solana.com`) if required. For example, to switch to the mainnet:
+
+  ```typescript
+  const connection = new Connection(
+    'https://api.mainnet-beta.solana.com',
+    'confirmed'
+  );
+  ```
+
+- The swap uses Jupiter Aggregator's API for quotes. Ensure you have network access to the API endpoints.
+
+## Usage
+
+1. Connect your wallet using the "Connect Wallet" button.
+2. Select tokens for swapping from the dropdown lists.
+3. Enter the amount of tokens to sell.
+4. (Optional) Adjust slippage tolerance by clicking the gear icon.
+5. Click **Swap** to complete the transaction.
+
+## Deployment
+
+1. Build the project for production:
+   ```bash
+   npm run build
+   ```
+2. Start the production server:
+   ```bash
+   npm start
+   ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature name"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Jupiter Aggregator](https://jup.ag) for providing the swap API.
+- [Solana](https://solana.com) for the blockchain infrastructure.
+- [Phantom](https://phantom.app) for wallet integration support.
+
+## Contact
+
+For questions, issues, or feature requests, please contact [Ayush272002](https://github.com/Ayush272002).
