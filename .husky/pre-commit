@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-npm run format && npm run build
+npx lint-staged && npm run build
